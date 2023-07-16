@@ -3,6 +3,7 @@ import pandas as pd
 import spikeinterface.extractors as se
 from spikeinterface import concatenate_recordings
 
+
 class SignalSelector:
     def __init__(self, path):
         rhd_files = [*Path(path).glob('*.rhd')]
