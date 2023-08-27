@@ -1,8 +1,8 @@
 import spikeinterface.preprocessing as spre
 
 
-def preprocess(recording, verbose=False):
-    recording_f = spre.bandpass_filter(recording, freq_min=300, freq_max=6000)
+def preprocess(recording, low, high, verbose=False):
+    recording_f = spre.filter(recording, band=[low, high])
     if verbose:
         print(recording_f)
     recording_cmr = spre.common_reference(recording_f, reference='global', operator='median')
